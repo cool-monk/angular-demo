@@ -1,0 +1,27 @@
+<div class="navbar flex">
+  <div class="navbar-left flex">
+    <div class="logo">
+      <a [routerLink]="['/']" routerLinkActive="router-link-active"
+        ><img
+          src="../../assets/images/rsz_imaginea-small-logo.png"
+          width="200px"
+      /></a>
+    </div>
+    <div class="navs flex">
+      <a
+        [routerLink]="['/employees']"
+        class="nav-item"
+        routerLinkActive="active-route"
+        ><div>employees</div></a
+      >
+
+      <a
+        [routerLink]="['/contact']"
+        class="nav-item"
+        routerLinkActive="active-route"
+        ><div>contact</div></a
+      >
+    </div>
+  </div>
+  <div class="navbar-right">LOGIN | SIGNUP</div>
+</div>

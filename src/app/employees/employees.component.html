@@ -1,0 +1,22 @@
+<div class="users-content">
+  <div *ngIf="employees.length; then alluserblock; else elseBlock"></div>
+  <ng-template #alluserblock>
+    <div>
+      <h1>All Users Here</h1>
+      <div class="selected-user" *ngIf="currentUser">
+        {{ currentUser.name }}
+      </div>
+      <div *ngFor="let item of employees">
+        <app-user-item
+          (selectedUser)="updateMainState($event)"
+          [user]="item"
+          [currentUser]="currentUser"
+        ></app-user-item>
+      </div>
+      <div></div>
+    </div>
+  </ng-template>
+  <ng-template #elseBlock>
+    <div><h1>We have no users</h1></div>
+  </ng-template>
+</div>

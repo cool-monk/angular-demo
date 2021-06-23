@@ -1,0 +1,12 @@
+.users-content {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.selected-user {
+  background-color: rgb(191, 247, 191);
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}

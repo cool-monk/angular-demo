@@ -1,0 +1,44 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+.flex {
+  display: flex;
+}
+
+.navbar {
+  background-color: #dddddd;
+  padding: 1em;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  margin-right: 5em;
+}
+
+.navs {
+  align-items: center;
+}
+
+.navbar-left {
+  flex-grow: 1;
+}
+
+.nav-item {
+  text-transform: uppercase;
+  margin-right: 1em;
+  padding: 1em;
+  border-radius: 30px;
+}
+
+.nav-item:hover {
+  background-color: grey;
+  color: white;
+}
+
+.active-route {
+  background-color: rgb(113, 191, 255);
+  color: black;
+}

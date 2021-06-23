@@ -1,0 +1,17 @@
+.contact {
+  text-align: center;
+  padding: 70px;
+  min-height: 70vh;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 20px;
+}
