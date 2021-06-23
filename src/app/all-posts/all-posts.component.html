@@ -1,0 +1,11 @@
+<div class="posts-wrapper">
+  <div *ngFor="let post of allPosts">
+    <div class="post-item">
+      <p>{{ post.id }} {{ post.title }}</p>
+      <p>{{ post.body }}</p>
+      <a [routerLink]="['/comments']" [queryParams]="{ postId: post.id }"
+        ><button>View Comments</button></a
+      >
+    </div>
+  </div>
+</div>

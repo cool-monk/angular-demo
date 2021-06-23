@@ -1,0 +1,11 @@
+.comments-wrapper {
+  width: 80%;
+  margin: auto;
+  padding: 1em 0em;
+}
+
+.comment-item {
+  padding: 1em;
+  border: 1px solid rgb(233, 229, 229);
+  margin-bottom: 1em;
+}

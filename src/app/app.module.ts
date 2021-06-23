@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { UserItemComponent } from './user-item/user-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AllPostsComponent } from './all-posts/all-posts.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +20,10 @@ import { UserItemComponent } from './user-item/user-item.component';
     FooterComponent,
     routingComponents,
     UserItemComponent,
+    AllPostsComponent,
+    CommentsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-employees',
@@ -6,15 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employees.component.css'],
 })
 export class EmployeesComponent implements OnInit {
-  public employees = [
-    { id: 1, name: 'Rajiv' },
-    { id: 2, name: 'Phalana' },
-  ];
+  public employees: any;
   public currentUser: any;
 
-  constructor() {}
+  constructor(private _http: HttpService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._http
+      .api('https://jsonplaceholder.typicode.com/users')
+      .subscribe((data) => {
+        this.employees = data;
+        console.log(this.employees);
+      });
+  }
 
   updateMainState($event: any) {
     this.currentUser = $event;

@@ -1,0 +1,8 @@
+<div class="comments-wrapper">
+  <div *ngFor="let comment of comments">
+    <div class="comment-item">
+      <p>{{ comment.body }}</p>
+      <p>commented by: {{ comment.email }}</p>
+    </div>
+  </div>
+</div>
