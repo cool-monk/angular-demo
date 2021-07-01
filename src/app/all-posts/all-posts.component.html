@@ -1,11 +1,27 @@
 <div class="posts-wrapper">
-  <div *ngFor="let post of allPosts">
-    <div class="post-item">
-      <p>{{ post.id }} {{ post.title }}</p>
-      <p>{{ post.body }}</p>
-      <a [routerLink]="['/comments']" [queryParams]="{ postId: post.id }"
-        ><button>View Comments</button></a
-      >
-    </div>
-  </div>
+  <h1>All Posts</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SN</th>
+        <th scope="col">title</th>
+        <th scope="col">body</th>
+        <th scope="col">actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let post of allPosts">
+      <tr>
+        <th scope="row">{{ post.id }}</th>
+        <td>{{ post.title }}</td>
+        <td>{{ trimPostBody(post.body) }}</td>
+        <td>
+          <a
+            [routerLink]="['/comments']"
+            [queryParams]="{ postId: post.id, postTitle: post.title }"
+            ><button>View Comments</button></a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

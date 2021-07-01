@@ -6,13 +6,31 @@
       <div class="selected-user" *ngIf="currentUser">
         {{ currentUser.name }}
       </div>
-      <div *ngFor="let item of employees">
-        <app-user-item
-          (selectedUser)="updateMainState($event)"
-          [user]="item"
-          [currentUser]="currentUser"
-        ></app-user-item>
-      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SN</th>
+            <th scope="col">Name</th>
+            <th scope="col">UserName</th>
+
+            <th scope="col">Email</th>
+            <th scope="col">Company</th>
+            <th scope="col">Address</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of employees">
+          <tr>
+            <th scope="row">{{ item.id }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.username }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.company.name }}</td>
+            <td>{{ item.address.street }},{{ item.address.city }}</td>
+            <td>delete</td>
+          </tr>
+        </tbody>
+      </table>
       <div></div>
     </div>
   </ng-template>

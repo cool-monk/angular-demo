@@ -1,8 +1,24 @@
 <div class="comments-wrapper">
-  <div *ngFor="let comment of comments">
-    <div class="comment-item">
-      <p>{{ comment.body }}</p>
-      <p>commented by: {{ comment.email }}</p>
-    </div>
-  </div>
+  <h1>{{ postTitle }}</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SN</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+
+        <th scope="col">Body</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of comments">
+      <tr>
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ trimPostBody(item.body) }}</td>
+        <td>delete</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

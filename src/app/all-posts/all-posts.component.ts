@@ -18,4 +18,8 @@ export class AllPostsComponent implements OnInit {
         this.allPosts = data;
       });
   }
+
+  trimPostBody(postBody: String) {
+    return `${postBody.substring(0, 12)}...`;
+  }
 }

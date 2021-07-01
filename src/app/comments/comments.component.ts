@@ -9,6 +9,7 @@ import { HttpService } from '../http.service';
 })
 export class CommentsComponent implements OnInit {
   public comments: any;
+  public postTitle: any;
   private localParams: any;
 
   constructor(private route: ActivatedRoute, private _http: HttpService) {}
@@ -16,6 +17,7 @@ export class CommentsComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.localParams = params;
+      this.postTitle = params.postTitle;
       console.log(this.localParams);
     });
 
@@ -26,5 +28,9 @@ export class CommentsComponent implements OnInit {
       .subscribe((data) => {
         this.comments = data;
       });
+  }
+
+  trimPostBody(postBody: String) {
+    return `${postBody.substring(0, 12)}...`;
   }
 }
